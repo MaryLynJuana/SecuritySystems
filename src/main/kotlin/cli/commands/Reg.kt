@@ -39,7 +39,7 @@ object Reg : Command() {
             return
         }
 
-        context.register(RegistrationJournal.Record(username, password))
+        context.register(RegistrationJournal.Record(username, password, secret = ""))
         context.writeLogForUser(
             SecurityJournal.SecurityLevel.Info,
             "reg: created user $username"
